@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-    public PlayerManager player;
+    public static PlayerManager player;
     private int health = 5;
     void Awake()
     {
