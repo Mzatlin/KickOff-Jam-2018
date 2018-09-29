@@ -8,7 +8,7 @@ public class PlayerCrouch : MonoBehaviour {
     // Use this for initialization
     void Start () {
         collider = GetComponent<BoxCollider2D>();
-        size = collider.size;
+      //  size = collider.size;
     }
 	
 	// Update is called once per frame
@@ -16,12 +16,14 @@ public class PlayerCrouch : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Debug.Log("Crouch");
-            collider.size = new Vector2(.1f, .1f);
+            collider.enabled = false;
+         //   collider.size = new Vector2(.1f, .1f);
         }
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             Debug.Log("UnCrouch");
-            collider.size = size;
+            //  collider.size = size;
+            collider.enabled = true;
         }
     }
 }

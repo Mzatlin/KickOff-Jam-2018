@@ -9,7 +9,7 @@ public class PlayerJump : MonoBehaviour {
     bool isgrounded = true;
     // Use this for initialization
     void Start () {
-        Jumpdirection = new Vector2(0, 50);
+        Jumpdirection = new Vector2(0, 10);
         rb = GetComponent<Rigidbody2D>();
     }
 	
@@ -18,7 +18,10 @@ public class PlayerJump : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            rb.AddForce(Jumpdirection * 10);
+            rb.AddForce(Jumpdirection * 50);
+          //  rb.velocity = new Vector2(0, 10);
+            Debug.Log("Jumping");
+          //  Vector2 targetvelocity = new Vector2(0, 50);
 
             isgrounded = false;
         }
