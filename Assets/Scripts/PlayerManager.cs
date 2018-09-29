@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     public static PlayerManager player;
     private int currenthealth = 5;
-    private int currentspeed = 20;
+    private int currentspeed = 30;
     void Awake()
     {
         player = this;
