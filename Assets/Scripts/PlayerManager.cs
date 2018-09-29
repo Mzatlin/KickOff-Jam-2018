@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
     public static PlayerManager player;
-    private int health = 5;
+    private int currenthealth = 5;
+    private int currentspeed = 20;
     void Awake()
     {
         player = this;
@@ -13,11 +14,22 @@ public class PlayerManager : MonoBehaviour {
     {
         get
         {
-            return health;
+            return currenthealth;
         }
         set
         {
-            health = value;
+            currenthealth = value;
+        }
+    }
+    public int Speed
+    {
+        get
+        {
+            return currentspeed;
+        }
+        set
+        {
+            currentspeed = value;
         }
     }
 

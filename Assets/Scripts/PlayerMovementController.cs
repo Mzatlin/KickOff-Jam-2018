@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour {
     Rigidbody2D rb;
-    int movespeed = 20;
     [SerializeField]
     Vector2 Jumpdirection;
     bool isgrounded;
     // Use this for initialization
     void Start()
     {
-        Debug.Log(PlayerManager.player.Health);
         rb = GetComponent<Rigidbody2D>();
         Jumpdirection = new Vector2(0, 30);
     }
@@ -35,7 +33,7 @@ public class PlayerMovementController : MonoBehaviour {
     }
     void moveplayer()
     {
-        rb.velocity = new Vector2(1*movespeed*Time.deltaTime, 0);
+        rb.velocity = new Vector2(1*(PlayerManager.player.Speed * Time.deltaTime), 0);
     }
 }
 
