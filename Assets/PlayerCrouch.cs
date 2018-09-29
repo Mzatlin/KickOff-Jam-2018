@@ -18,5 +18,10 @@ public class PlayerCrouch : MonoBehaviour {
             Debug.Log("Crouch");
             collider.size = new Vector2(.1f, .1f);
         }
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            Debug.Log("UnCrouch");
+            collider.size = size;
+        }
     }
 }
