@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerManager : MonoBehaviour {
     public static PlayerManager player;
+    public event Action OnDie = delegate { };
     private int currenthealth = 5;
     private int currentspeed = 30;
+    private bool isDead = false;
     void Awake()
     {
         player = this;
@@ -30,6 +33,18 @@ public class PlayerManager : MonoBehaviour {
         set
         {
             currentspeed = value;
+        }
+    }
+    
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+        }
+        set
+        {
+            isDead = value;
         }
     }
 

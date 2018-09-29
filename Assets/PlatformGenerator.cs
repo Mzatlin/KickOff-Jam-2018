@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
+    public List<GameObject> obstacles;
+    public GameObject firstPlatform;
+    public GameObject platform;
+    Transform nextPlatformspawn;
+    // Use this for initialization
+    void Start () {
+      //  nextPlatformspawn = firstPlatform.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    void GeneratePlatform()
+    {
+
+    }
 }
