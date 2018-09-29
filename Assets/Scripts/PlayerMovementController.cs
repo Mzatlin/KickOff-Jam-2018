@@ -6,12 +6,12 @@ public class PlayerMovementController : MonoBehaviour {
     Rigidbody2D rb;
     [SerializeField]
     Vector2 Jumpdirection;
-    bool isgrounded;
+    bool isgrounded = true;
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Jumpdirection = new Vector2(0, 30);
+        Jumpdirection = new Vector2(0, 40);
     }
 
     // Update is called once per frame
@@ -20,10 +20,10 @@ public class PlayerMovementController : MonoBehaviour {
         moveplayer();
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) { 
-
-            rb.AddForce(Jumpdirection * 10);
-            isgrounded = false;
+        if (Input.GetKeyDown(KeyCode.Mouse0)&&isgrounded) {
+            Debug.Log("Jump");
+             rb.AddForce(Jumpdirection * 20);
+             isgrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -35,5 +35,10 @@ public class PlayerMovementController : MonoBehaviour {
     {
         rb.velocity = new Vector2(1*(PlayerManager.player.Speed * Time.deltaTime), 0);
     }
+   void OnCollisionEnter2D(Collision collision)
+    {
+        isgrounded = true;
+    }
+
 }
 
