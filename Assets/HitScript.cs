@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HitScript : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    Grill grill;
+    public event Action OnHit = delegate { };
+    public event Action OnDie = delegate { };
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -13,4 +16,24 @@ public class HitScript : MonoBehaviour {
 	void Update () {
 		
 	}
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+       grill = collision.gameObject.GetComponent<Grill>();
+
+         if (grill != null)
+        {
+            if (PlayerManager.player.Health < grill.damage)
+            {
+                OnDie();
+            }
+            else
+            {
+                PlayerManager.player.Health -= grill.damage;
+            }
+            
+            Debug.Log(PlayerManager.player.Health);
+            OnHit();
+        }
+    }
 }

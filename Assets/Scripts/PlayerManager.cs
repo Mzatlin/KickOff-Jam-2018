@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerManager player;
     public event Action OnDie = delegate { };
     private int currenthealth = 5;
-    private int currentspeed = 100;
+    private int currentspeed = 80;
     private bool isDead = false;
     void Awake()
     {
@@ -17,11 +17,19 @@ public class PlayerManager : MonoBehaviour {
     {
         get
         {
+            
             return currenthealth;
         }
         set
         {
-            currenthealth = value;
+            if (currenthealth < 1)
+            {
+                isDead = true;
+            }
+            else
+            {
+                currenthealth = value;
+            }
         }
     }
     public int Speed
@@ -45,6 +53,7 @@ public class PlayerManager : MonoBehaviour {
         set
         {
             isDead = value;
+            OnDie();
         }
     }
 
