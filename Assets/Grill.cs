@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Grill : MonoBehaviour {
     PlayerManager m_player;
+
     // Use this for initialization
     void Start () {
 		
@@ -20,6 +22,7 @@ public class Grill : MonoBehaviour {
         if (m_player != null)
         {
             PlayerManager.player.Health--;
+            Debug.Log(PlayerManager.player.Health);
         }
     }
 }
