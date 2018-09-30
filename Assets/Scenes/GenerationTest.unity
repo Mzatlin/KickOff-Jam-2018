@@ -735,6 +735,7 @@ GameObject:
   - component: {fileID: 1269584582}
   - component: {fileID: 1269584581}
   - component: {fileID: 1269584580}
+  - component: {fileID: 1269584589}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -780,6 +781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jumpdirection: {x: 0, y: 0}
+  fallmultiplier: 2.5
+  lowjumpmultiplier: 2
 --- !u!50 &1269584583
 Rigidbody2D:
   serializedVersion: 4
@@ -907,6 +910,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1269584589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1269584579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53a3fd755ffc4447b1e49361f2d66bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426065618
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c433846c3a112a84ab2a34923a60d69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!61 &1426065620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1014,7 +1029,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426065618}
   m_LocalRotation: {x: -0, y: -0, z: 0.0004281492, w: -0.9999999}
-  m_LocalPosition: {x: -0.687, y: 0.276, z: 0.003638735}
+  m_LocalPosition: {x: -0.687, y: 0.048, z: 0.003638735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1108,7 +1123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4463705338658552, guid: c6a5b050437d5854fbbe2c5d7ec9b593, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.168
+      value: 0.161
       objectReference: {fileID: 0}
     - target: {fileID: 4463705338658552, guid: c6a5b050437d5854fbbe2c5d7ec9b593, type: 2}
       propertyPath: m_LocalPosition.z

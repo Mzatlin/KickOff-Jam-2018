@@ -5,7 +5,7 @@ using System;
 
 public class Grill : MonoBehaviour {
     PlayerManager m_player;
-
+    public int damage;
     // Use this for initialization
     void Start () {
 		
@@ -21,7 +21,7 @@ public class Grill : MonoBehaviour {
         m_player = collision.gameObject.GetComponent<PlayerManager>();
         if (m_player != null)
         {
-            PlayerManager.player.Health--;
+            PlayerManager.player.Health =- damage;
             Debug.Log(PlayerManager.player.Health);
         }
     }
