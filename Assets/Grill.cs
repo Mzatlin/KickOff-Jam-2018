@@ -16,13 +16,14 @@ public class Grill : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+ /*   void OnCollisionEnter2D(Collision2D collision)
     {
         m_player = collision.gameObject.GetComponent<PlayerManager>();
+
         if (m_player != null)
         {
             PlayerManager.player.Health =- damage;
             Debug.Log(PlayerManager.player.Health);
         }
-    }
+    }*/
 }

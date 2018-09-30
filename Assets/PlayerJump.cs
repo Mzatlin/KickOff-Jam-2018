@@ -25,14 +25,7 @@ public class PlayerJump : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-  /*      if (Physics.Raycast(transform.position, dir, out hit, distance))
-        {
-            isgrounded = true;
-        }
-        else
-        {
-            isgrounded = false;
-        }*/
+
 
         if (Input.GetKeyDown(KeyCode.Mouse0)&&isgrounded)
         {
