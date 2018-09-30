@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class ButtonScript : MonoBehaviour {
     public void Play()
     {
         Debug.Log("Test Play");
-        //SceneManager.LoadScene(gameplay);
+        SceneManager.LoadScene("OpeningCutscene");
     }
     public void Credits()
     {
