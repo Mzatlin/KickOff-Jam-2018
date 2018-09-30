@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 186218640}
   - component: {fileID: 186218641}
   - component: {fileID: 186218642}
+  - component: {fileID: 186218643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -251,7 +252,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0024509877, y: 0.0024509728}
+  m_Offset: {x: 0.0024509877, y: 0.039223015}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -262,7 +263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13967046, y: 0.32594544}
+  m_Size: {x: 0.13967046, y: 0.25240135}
   m_EdgeRadius: 0
 --- !u!114 &186218640
 MonoBehaviour:
@@ -276,6 +277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jumpdirection: {x: 0, y: 0}
+  fallmultiplier: 2.5
+  lowjumpmultiplier: 2
   animator: {fileID: 186218642}
 --- !u!114 &186218641
 MonoBehaviour:
@@ -288,7 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fd65aef0c97424d927f106e9537cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 186218642}
 --- !u!95 &186218642
 Animator:
   serializedVersion: 3
@@ -307,6 +309,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &186218643
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186218633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09}
+  serializedVersion: 2
+  m_Radius: 0.069909126
 --- !u!1 &497712659
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e306b675b01b84e8b04287a7bb63f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacles: []
+  firstPlatform: {fileID: 0}
+  platform: {fileID: 0}
 --- !u!4 &994167518
 Transform:
   m_ObjectHideFlags: 0
