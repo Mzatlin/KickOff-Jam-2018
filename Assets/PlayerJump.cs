@@ -13,7 +13,7 @@ public class PlayerJump : MonoBehaviour {
     RaycastHit hit;
     float distance = 1f;
     Vector3 dir = new Vector3(0, -1);
-
+    public Animation animator;
 
     // Use this for initialization
     void Start () {

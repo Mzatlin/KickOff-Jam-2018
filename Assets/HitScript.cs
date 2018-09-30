@@ -6,6 +6,7 @@ using System;
 public class HitScript : MonoBehaviour {
     Grill grill;
     public event Action OnHit = delegate { };
+    public event Action OnDie = delegate { };
     // Use this for initialization
     void Start () {
 		
@@ -22,7 +23,15 @@ public class HitScript : MonoBehaviour {
 
          if (grill != null)
         {
-            PlayerManager.player.Health -= grill.damage;
+            if (PlayerManager.player.Health < grill.damage)
+            {
+                OnDie();
+            }
+            else
+            {
+                PlayerManager.player.Health -= grill.damage;
+            }
+            
             Debug.Log(PlayerManager.player.Health);
             OnHit();
         }

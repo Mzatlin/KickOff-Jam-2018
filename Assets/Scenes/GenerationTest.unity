@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 1269584589}
   - component: {fileID: 1269584590}
   - component: {fileID: 1269584591}
+  - component: {fileID: 1269584592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -560,6 +561,7 @@ MonoBehaviour:
   Jumpdirection: {x: 0, y: 0}
   fallmultiplier: 2.5
   lowjumpmultiplier: 2
+  animator: {fileID: 0}
 --- !u!50 &1269584583
 Rigidbody2D:
   serializedVersion: 4
@@ -594,10 +596,10 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0024509728, y: 0.039156884}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.17, y: 0.32}
+    newSize: {x: 0.17, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -668,7 +670,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.17, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -722,6 +724,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   render: {fileID: 1595461599}
+--- !u!95 &1269584592
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1269584579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ff168a8e51dc5545ad277be756b2abe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1426065618
 GameObject:
   m_ObjectHideFlags: 0

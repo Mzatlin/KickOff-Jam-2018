@@ -7,6 +7,7 @@ public class PlayerDeath : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GetComponentInParent<PlayerManager>().OnDie += HandleDie;
+        GetComponentInParent<HitScript>().OnDie += HandleDie;
     }
 	void HandleDie()
     {
