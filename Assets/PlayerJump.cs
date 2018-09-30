@@ -29,7 +29,7 @@ public class PlayerJump : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0)&&isgrounded)
         {
-                rb.AddForce(Jumpdirection * 50);
+                rb.AddForce(Jumpdirection * 80);
             //  rb.AddForce(Vector2.up * 100);
             // rb.velocity = Vector2.up*100;
             //   GetComponent<Rigidbody2D>().velocity = Vector2.up * 100f;
